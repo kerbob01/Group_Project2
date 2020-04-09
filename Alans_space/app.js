@@ -29,7 +29,7 @@ var chartGroup = svg.append("g")
 var parseTime = d3.timeParse("%Y");
 
 // Load data from forcepoints.csv
-d3.csv("Bigfoot.csv").then(function(bfData) {
+d3.csv("../data/sightings_by_year.csv").then(function(bfData) {
 
   // Print the forceData
   //console.log(bfData);
@@ -37,11 +37,11 @@ d3.csv("Bigfoot.csv").then(function(bfData) {
   // Format the date and cast the force value to a number
   bfData.forEach(function(data) {
     data.year = parseTime(data.year);
-    data.number = +data.number;
+    data.count = +data.count;
     //bfcnt = ++bfcnt;
     console.log(data.year);
     //console.log(bfcnt);
-    console.log(data.number)
+    console.log(data.count)
   });
 
   // Configure a time scale
@@ -52,7 +52,7 @@ d3.csv("Bigfoot.csv").then(function(bfData) {
 
   // Configure a linear scale with a range between the chartHeight and 0
   var yLinearScale = d3.scaleLinear()
-    .domain([0, d3.max(bfData, data => data.number)])
+    .domain([0, d3.max(bfData, data => data.count)])
     .range([chartHeight, 0]);
 
   // Create two new functions passing the scales in as arguments
@@ -63,7 +63,7 @@ d3.csv("Bigfoot.csv").then(function(bfData) {
   // Configure a line function which will plot the x and y coordinates using our scales
   var drawLine = d3.line()
     .x(data => xTimeScale(data.year))
-    .y(data => yLinearScale(data.number));
+    .y(data => yLinearScale(data.count));
 
   // Append an SVG path and plot its points using the line function
   chartGroup.append("path")

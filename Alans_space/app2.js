@@ -1,86 +1,125 @@
-// Define SVG area dimensions
-var svgWidth = 960;
-var svgHeight = 500;
-var bfcnt = 1;
 
-// Define the chart's margins as an object
-var margin = {
-  top: 60,
-  right: 60,
-  bottom: 60,
-  left: 60
-};
 
-// Define dimensions of the chart area
-var chartWidth = svgWidth - margin.left - margin.right;
-var chartHeight = svgHeight - margin.top - margin.bottom;
+// set the dimensions and margins of the graph
+var margin = {top: 10, right: 30, bottom: 30, left: 60},
+    width = 460 - margin.left - margin.right,
+    height = 400 - margin.top - margin.bottom;
 
-// Select body, append SVG area to it, and set its dimensions
-var svg = d3.select("body")
+// append the svg object to the body of the page
+var svg = d3.select("#my_dataviz")
   .append("svg")
-  .attr("width", svgWidth)
-  .attr("height", svgHeight);
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform",
+          "translate(" + margin.left + "," + margin.top + ")");
 
-// Append a group area, then set its margins
-var chartGroup = svg.append("g")
-  .attr("transform", `translate(${margin.left}, ${margin.top})`);
+//Read the data
+d3.csv("../data/sightings_by_year.csv",
 
-// Configure a parseTime function which will return a new Date object from a string
-var parseTime = d3.timeParse("%Y");
+  // When reading the csv, I must format variables:
+  function(d){
+    return { year : d3.timeParse("%Y")(d.year), count : d.value }
+    
+  },
 
-// Load data from forcepoints.csv
-d3.csv("Bigfoot.csv").then(function(bfData) {
+  // Now I can use this dataset:
+  function(data) {
+console.log(data)
+    // Add X axis --> it is a date format
+    var x = d3.scaleTime()
+      .domain(d3.extent(data, function(d) { return d.year; }))
+      .range([ 0, width ]);
+    xAxis = svg.append("g")
+      .attr("transform", "translate(0," + height + ")")
+      .call(d3.axisBottom(x));
 
-  // Print the forceData
-  //console.log(bfData);
+    // Add Y axis
+    var y = d3.scaleLinear()
+      .domain([0, d3.max(data, function(d) { return +d.count; })])
+      .range([ height, 0 ]);
+    yAxis = svg.append("g")
+      .call(d3.axisLeft(y));
 
-  // Format the date and cast the force value to a number
-  bfData.forEach(function(data) {
-    data.year = parseTime(data.year);
-    //data.number = +data.number;
-    bfcnt = ++bfcnt;
-    console.log(data.year);
-    console.log(bfcnt);
-  });
+    // Add a clipPath: everything out of this area won't be drawn.
+    var clip = svg.append("defs").append("svg:clipPath")
+        .attr("id", "clip")
+        .append("svg:rect")
+        .attr("width", width )
+        .attr("height", height )
+        .attr("x", 0)
+        .attr("y", 0);
 
-  // Configure a time scale
-  // d3.extent returns the an array containing the min and max values for the property specified
-  var xTimeScale = d3.scaleTime()
-    .domain(d3.extent(bfData, data => data.year))
-    .range([0, chartWidth]);
+    // Add brushing
+    var brush = d3.brushX()                   // Add the brush feature using the d3.brush function
+        .extent( [ [0,0], [width,height] ] )  // initialise the brush area: start at 0,0 and finishes at width,height: it means I select the whole graph area
+        .on("end", updateChart)               // Each time the brush selection changes, trigger the 'updateChart' function
 
-  // Configure a linear scale with a range between the chartHeight and 0
-  var yLinearScale = d3.scaleLinear()
-    .domain([0, d3.max(bfData, data => data.bfcnt)])
-    .range([chartHeight, 0]);
+    // Create the line variable: where both the line and the brush take place
+    var line = svg.append('g')
+      .attr("clip-path", "url(#clip)")
 
-  // Create two new functions passing the scales in as arguments
-  // These will be used to create the chart's axes
-  var bottomAxis = d3.axisBottom(xTimeScale);
-  var leftAxis = d3.axisLeft(yLinearScale);
+    // Add the line
+    line.append("path")
+      .datum(data)
+      .attr("class", "line")  // I add the class line to be able to modify this line later on.
+      .attr("fill", "none")
+      .attr("stroke", "steelblue")
+      .attr("stroke-width", 1.5)
+      .attr("d", d3.line()
+        .x(function(d) { return x(d.year) })
+        .y(function(d) { return y(d.count) })
+        )
 
-  // Configure a line function which will plot the x and y coordinates using our scales
-  var drawLine = d3.line()
-    .x(data => xTimeScale(data.year))
-    .y(data => yLinearScale(data.bfcnt));
+    // Add the brushing
+    line
+      .append("g")
+        .attr("class", "brush")
+        .call(brush);
 
-  // Append an SVG path and plot its points using the line function
-  chartGroup.append("path")
-    // The drawLine function returns the instructions for creating the line for bfData
-    .attr("d", drawLine(bfData))
-    .classed("line", true);
+    // A function that set idleTimeOut to null
+    var idleTimeout
+    function idled() { idleTimeout = null; }
 
-  // Append an SVG group element to the chartGroup, create the left axis inside of it
-  chartGroup.append("g")
-    .classed("axis", true)
-    .call(leftAxis);
+    // A function that update the chart for given boundaries
+    function updateChart() {
 
-  // Append an SVG group element to the chartGroup, create the bottom axis inside of it
-  // Translate the bottom axis to the bottom of the page
-  chartGroup.append("g")
-    .classed("axis", true)
-    .attr("transform", `translate(0, ${chartHeight})`)
-    .call(bottomAxis);
-}).catch(function(error) {
-  console.log(error);
-});
+      // What are the selected boundaries?
+      extent = d3.event.selection
+
+      // If no selection, back to initial coordinate. Otherwise, update X axis domain
+      if(!extent){
+        if (!idleTimeout) return idleTimeout = setTimeout(idled, 350); // This allows to wait a little bit
+        x.domain([ 4,8])
+      }else{
+        x.domain([ x.invert(extent[0]), x.invert(extent[1]) ])
+        line.select(".brush").call(brush.move, null) // This remove the grey brush area as soon as the selection has been done
+      }
+
+      // Update axis and line position
+      xAxis.transition().duration(1000).call(d3.axisBottom(x))
+      line
+          .select('.line')
+          .transition()
+          .duration(1000)
+          .attr("d", d3.line()
+            .x(function(d) { return x(d.year) })
+            .y(function(d) { return y(d.count) })
+          )
+    }
+
+    // If user double click, reinitialize the chart
+    svg.on("dblclick",function(){
+      x.domain(d3.extent(data, function(d) { return d.year; }))
+      xAxis.transition().call(d3.axisBottom(x))
+      line
+        .select('.line')
+        .transition()
+        .attr("d", d3.line()
+          .x(function(d) { return x(d.year) })
+          .y(function(d) { return y(d.count) })
+      )
+    });
+
+})
+
