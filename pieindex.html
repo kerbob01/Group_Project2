@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html>
+	<head>
+		<title> Bigfoot Sightings </title>
+
+		<!-- JavaScript Libraries //-->
+		<script type = "text/javascript" src = "d3.v4.js"> </script>
+		<!-- CSS Style //-->
+		<link href="style.css" rel="stylesheet" type="text/css">
+
+	</head>
+	
+	<body>
+		<div id="content"
+				style="font-family:'font: fantasy; Large';font-weight:normal;">
+			<!-- Headers //-->
+			<h1 style="font-family:'fantasy; Medium';font-weight:normal;">
+				Bigfoot Sightings, USA 1905-2018<br>
+				<br>
+
+			</h1>
+			<h2 class = "year"
+				style="font-family:'fantasy Medium';font-weight:normal;">
+				
+			</h2>
+			<h2 class = "count"
+				style="font-family:'fantasy Medium';font-weight:normal;">
+				
+			</h2>
+
+			<!-- Slider //-->
+			<input id = "slider" type = "range" min = "1905" max = "2018" step = "1" value = "1905"/>
+			
+			<div id = "pie">
+				<!-- Pie Chart //-->
+				<div id = "chart" style="font-family:'fantasy Medium';"> </div>
+				<div id = legendWrapper >
+					<div id = imgHolder>
+						 <!-- Legend  -->
+						 <!-- <img id = "legend" src="feet.jpg"; />  -->
+						 <strong>Class A</strong><br>
+							Class A reports involve clear sightings in circumstances where misinterpretation or misidentification of other animals can be ruled out with greater confidence. For example, there are several footprint cases that are very well documented. These are considered Class A reports, because misidentification of common animals can be confidently ruled out, thus the potential for misinterpretation is very low.<br>
+							<br>
+							<strong>Class B</strong><br>
+							Incidents where a possible sasquatch was observed at a great distance or in poor lighting conditions and incidents in any other circumstance that did not afford a clear view of the subject are considered Class B reports.<br>
+							<br>				
+							<strong>Class C</strong><br>
+							Most second-hand reports, and any third-hand reports, or stories with an untraceable sources, are considered Class C, because of the high potential for inaccuracy. Those reports are kept in BFRO archives but are very rarely listed publicly in this database. The exceptions are for published, or locally documented incidents from before 1958 (before the word "Bigfoot" entered the American vocabulary), and sightings mentioned in non-tabloid newspapers or magazines.
+						<br> 
+						<!-- hide url but take you there when click class detail -->
+						More "Class" information is available at: <a href="https://www.bfro.net/GDB/classify.asp#classification">Class Detail</a>
+					</div>
+					 
+				</div>
+			</div>
+			</a>
+		</nav>
+			
+			
+				
+			<!-- Javascript //-->
+				<script src = "sites.js" type = "text/javascript"></script>
+		</div>
+		
+	</body>
+
+</html>
