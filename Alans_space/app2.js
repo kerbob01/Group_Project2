@@ -2,8 +2,8 @@
 
 // set the dimensions and margins of the graph
 var margin = {top: 10, right: 30, bottom: 30, left: 60},
-    width = 460 - margin.left - margin.right,
-    height = 400 - margin.top - margin.bottom;
+    width = 960 - margin.left - margin.right,
+    height = 500 - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
 var svg = d3.select("#my_dataviz")
@@ -19,9 +19,18 @@ d3.csv("../data/sightings_by_year.csv",
 
   // When reading the csv, I must format variables:
   function(d){
-    return { year : d3.timeParse("%Y")(d.year), count : d.value }
+    return { year : d3.timeParse("%Y")(d.year), count : +d.count }
     
   },
+
+
+  //  // Format the date and cast the miles value to a number
+  //  milesData.forEach(function(data) {
+  //   data.date = parseTime(data.date);
+  //   data.miles = +data.miles;
+  // });
+
+
 
   // Now I can use this dataset:
   function(data) {
@@ -70,8 +79,8 @@ console.log(data)
         .x(function(d) { return x(d.year) })
         .y(function(d) { return y(d.count) })
         )
-
-    // Add the brushing
+        
+       // Add the brushing
     line
       .append("g")
         .attr("class", "brush")
@@ -106,6 +115,9 @@ console.log(data)
             .x(function(d) { return x(d.year) })
             .y(function(d) { return y(d.count) })
           )
+//---------------------------------
+
+//----------------------------------
     }
 
     // If user double click, reinitialize the chart
@@ -120,6 +132,8 @@ console.log(data)
           .y(function(d) { return y(d.count) })
       )
     });
+  //---------------------------
+  
 
 })
 
