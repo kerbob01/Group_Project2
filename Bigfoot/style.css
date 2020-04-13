@@ -4,81 +4,105 @@
 	font-weight: bold;
 	src: local('fantasy Medium'), url('OratorStd.woff') format('woff');
 }
-
+/* color controls pie classes */
 body, h1, h2, h3, p {
 	font-family:'fantasy Medium';
 	font-weight:normal;
 	margin: 0;
 	padding: 0;
 	font-size: 1em;
-	color: #333;
+	color: rgb(250, 248, 248);
 	height:100%;
 	
 	
 }
-
+/* border found https://uicookies.com/css-border-animation/ */
 #content {
 	font-family:'fantasy Medium';
 	font-weight:normal;
 	margin: 5px;
 	padding: 10px;
-	width: 805px;
-	border: 1px solid #ccc;
+	width: 950px;
+	/* border: 3px outset rgb(184, 11, 11); */ */
+	.block:before, .block:after {
+		content: '';
+		position: absolute;
+		left: -2px;
+		top: -2px;
+		background: linear-gradient(45deg, #fb0094, #0000ff, #00ff00,#ffff00, #ff0000, #fb0094, 
+			#0000ff, #00ff00,#ffff00, #ff0000);
+		background-size: 400%;
+		width: calc(100% + 4px);
+		height: calc(100% + 4px);
+		z-index: -1;
+		animation: steam 20s linear infinite;
+	}
 	
+	@keyframes steam {
+		0% {
+			background-position: 0 0;
+		}
+		50% {
+			background-position: 400% 0;
+		}
+		100% {
+			background-position: 0 0;
+		}
+	}
+	
+	.block:after {
+		filter: blur(50px);
+	}
 }
 
-#map {
+/* #map {
 	font-family:'fantasy Medium';
 	font-weight:normal;
-	margin: 0px 0px 0px 0px;
-	padding: 0px;
-}
+	position: right; */
+	/* margin: 10px 10px 10px 10px; */
+	
+} */
 
 #pie {
-	width: 870px;
-	height: 400px;
+	width: 400px;
+	
+	height: 570px;
 	margin: 0 auto;
+	position: right;
 }
 
-#chart {
+/* #chart {
 	width: 400px;
-	height: 400px;
-}
+	height: 450px;
+} */
 
 #legendWrapper {
-	/* float: left; */
-	width: 380px;
-	height: 480px;
-	/* padding-right: 20px; */
+text-underline-position: auto;
+	width: 480px;
+	height: 650px;
+	padding-top: 40px;
+	padding-right: 10px; */
 }
-
+/* moves pie right or left */
 #chart, #legendWrapper {
-	float: left;
+	float: right;
 		
-}
+} */
 
 #imgHolder {
-	width: 40%;
-	padding: 120px;
-	/* margin: 0 auto; */
-	margin-right: 15px;
-	padding-right: 120px;
+	 margin: 0 auto; */
 
-}
-
-#legend {
-    max-width: 160%;
-    max-height: 160%;
 }
 
 
 h1, h2 {
 	font-family:'fantasy Medium';
+	position: left;
 	font-weight:normal;
 	line-height: 1em;
-	font-size: 1.75em;
+	font-size: 2.75em;
 	font-weight: 900;
-	color: #000;
+	color: rgb(250, 245, 245);
 	/* background-color: rgb(225, 232, 245); */
 	}
 
@@ -86,47 +110,50 @@ h2.year, h2.count {
 	font-family:'fantasy Medium';
 	font-weight:normal;
 	margin: 0px 0px 0px 0px;
-	font-size: 1.3em;
+	font-size: 1.75em;
 	font-weight: 700;
 }
 
 p {
 	font-family:'fantasy Medium';
-	font-weight:normal;
+	/* font-weight:normal; */
 	margin: 00px 0px 0px 0px;
+	color: #000;
 }
 
 input {
 	font-family:'fantasy Medium';
-	font-weight:normal;
+	/* font-weight:normal; */
 	display: block;
 	width: 200px;
+	color: #000;
 	margin: 0px 0px 0px 0px;
 }
 
 .states {
-	fill: rgb(192, 201, 183);
+	fill: rgb(198, 199, 196);
 	stroke: #ffffff;
-	stroke-width: 2;
+	stroke-width: 3;
 	stroke-linejoin: round;
 }
 
 .sightings{
-	fill: rgb(69, 71, 201);
-	stroke: rgb(3, 5, 122);
-	stroke-width: 2;
+	fill: rgb(2, 2, 2);
+	stroke: rgb(96, 255, 4);
+	stroke-width: 5;
 }
-
+/* changes circles on map when activated */
 .sightings:hover{
-	fill: rgb(197, 190, 197);
-	stroke: rgb(117, 115, 117);
+	fill: rgb(5, 5, 5);
+	stroke: rgb(245, 123, 8);
+	stroke-width: 5;
 }
-
+/* map hoover tips */
 .tooltipMap{
 	font-family:'fantasy Medium';
 	font-weight:normal;
-	background: rgb(192, 201, 183);
-	box-shadow: 0 0 5px rgb(57, 69, 181);
+	background: rgb(198, 199, 196);
+	box-shadow: 0 0 5px rgb(2, 2, 2);
 	color: #333;
 	font-size: 12px;
 	left: 130px;
@@ -140,18 +167,12 @@ input {
 	opacity: 0;
 }
 
-.tooltipMap p {
-	font-family:'fantasy Medium';
-	font-weight:normal;
-	margin: 0;
-	padding: 0;
-}
-
+/* controls pie hoover tips */
 .tooltipChart{
 	font-family:'fantasy Medium';
 	font-weight:normal;
-	background: rgb(192, 201, 183);
-	box-shadow: 0 0 5px rgb(57, 69, 181);
+	background: rgb(198, 199, 196);
+	box-shadow: 0 0 5px rgb(3, 3, 3);
 	color: #333;
 	font-size: 12px;
 	left: 130px;
@@ -164,13 +185,56 @@ input {
 	display: block;
 	opacity: 0;
 }
-
+/* outline for pie split */
 .arc path {
-	stroke: #fff;
-	stroke-width: 2;
+	stroke: rgb(247, 245, 245);
+	stroke-width: 4;
 }
 
 .arc path:hover{
-	fill: rgb(192, 201, 183);
-	stroke: rgb(57, 69, 181);
+	fill: rgb(198, 199, 196);
+	stroke: rgb(252, 130, 49);
+}
+body {
+	margin: 0;
+	padding: 0;
+	background-color: #000;
+}
+
+.block {
+	position: relative;
+	margin: 100px auto 0;
+	width: 1000px;
+	height: 850px;
+	background: linear-gradient(0deg, rgb(26, 22, 22), #423e3e);
+}
+
+.block:before, .block:after {
+	content: '';
+	position: absolute;
+	left: -2px;
+	top: -2px;
+	background: linear-gradient(45deg, #fb5c00, #0000ff, #09a709,#ffff00, #f16e16, #fb2600, 
+		#0000ff, #16a116,#ffff00, #ff7b00);
+	background-size: 400%;
+	width: calc(100% + 3px);
+	height: calc(100% + 3px);
+	z-index: -1;
+	animation: steam 60s linear infinite;
+}
+
+@keyframes steam {
+	0% {
+		background-position: 0 0;
+	}
+	50% {
+		background-position: 400% 0;
+	}
+	100% {
+		background-position: 0 0;
+	}
+}
+
+.block:after {
+	filter: blur(50px);
 }
