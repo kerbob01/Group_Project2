@@ -1,0 +1,35 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.axis {
+  font: 14px sans-serif;
+}
+
+.line {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 2px;
+}
+
+
+.myCircle:hover {
+  stroke: black;
+}
+
+.mousemove{stroke: whitesmoke;
+  fill: whitesmoke;
+
+  .axisRed line{
+    stroke: red;
+  }
+  
+  .axisRed path{
+    stroke: red;
+  }
+  
+  .axisRed text{
+    fill: red;
+  }  
