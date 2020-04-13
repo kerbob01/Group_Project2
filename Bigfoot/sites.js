@@ -1,4 +1,4 @@
-var width = 800, height = 500;
+var width = 920, height = 600;
 var projection = d3.geoAlbersUsa().translate([width/2, height/2]);
 var path = d3.geoPath().projection(projection);
 
@@ -12,9 +12,9 @@ var mapTooltip = d3.select("body").append("div")
 
 //make the pie color while dormant https://www.color-hex.com/color-names.html
 var colorScheme = [
-	"#9ca69c",
-	"#9ca69c",
-	"#9ca69c"
+	"#cdc9c9",
+	"#cdc9c9",
+	"#cdc9c9"
 ];
 
 //creates map of US
@@ -28,7 +28,7 @@ d3.json("us.json", function(us){
 });
 
 //read the data set, and put into variable
-d3.csv("bigfoot.csv", 
+d3.csv("Bigfoot.csv", 
 	function(data){
 		initialData = data;
 		addSightingsByYear(data);
@@ -121,6 +121,7 @@ function updateHeaders(year, data){
 			if(countByYear[i] == undefined)
 				return "Sightings: 0";
 			return "Sightings: " + countByYear[i].value
+			
 		}
 	);
 }//end updateHeaders(...)
@@ -141,7 +142,7 @@ function updatePieChart(domElementToAppendTo, scheme, sightings){
 	d3.selectAll(".arc").remove();
 	d3.select(domElementToAppendTo).select("svg").remove();
 	
-	//get classifications and counts
+	//get seasons and counts
 	var countByClassification = d3.nest()
 		.key(
 			function(d){
@@ -178,7 +179,7 @@ function updatePieChart(domElementToAppendTo, scheme, sightings){
 	var width = 500 - margin.left - margin.right, height = width, radius = Math.min(width, height) / 2;
 	var donutWidth = 75;
 	var legendRectSize = 18;
-	var legendSpacing = 4;
+	var legendSpacing = 5;
 	
 	classificationData.forEach(
 		function(item){
