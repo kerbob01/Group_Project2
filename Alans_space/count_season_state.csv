@@ -1,0 +1,217 @@
+season,count,state
+Summer,30,Alabama
+Fall,19,Alabama
+Unknown,1,Alabama
+Winter,23,Alabama
+Spring,14,Alabama
+Fall,2,Alaska
+Winter,3,Alaska
+Spring,3,Alaska
+Summer,4,Alaska
+Fall,17,Arizona
+Unknown,2,Arizona
+Summer,35,Arizona
+Spring,7,Arizona
+Winter,13,Arizona
+Spring,13,Arkansas
+Fall,31,Arkansas
+Unknown,2,Arkansas
+Summer,24,Arkansas
+Winter,19,Arkansas
+Fall,82,California
+Winter,34,California
+Unknown,4,California
+Summer,148,California
+Spring,47,California
+Spring,16,Colorado
+Unknown,4,Colorado
+Summer,40,Colorado
+Winter,11,Colorado
+Fall,39,Colorado
+Fall,2,Connecticut
+Winter,2,Connecticut
+Summer,7,Connecticut
+Winter,1,Delaware
+Summer,1,Delaware
+Fall,1,Delaware
+Summer,82,Florida
+Fall,69,Florida
+Winter,64,Florida
+Unknown,9,Florida
+Spring,51,Florida
+Winter,24,Georgia
+Unknown,2,Georgia
+Spring,16,Georgia
+Summer,40,Georgia
+Fall,30,Georgia
+Summer,26,Idaho
+Fall,32,Idaho
+Spring,2,Idaho
+Winter,6,Idaho
+Unknown,1,Idaho
+Unknown,2,Illinois
+Spring,36,Illinois
+Summer,61,Illinois
+Winter,37,Illinois
+Fall,75,Illinois
+Unknown,1,Indiana
+Fall,15,Indiana
+Summer,27,Indiana
+Winter,7,Indiana
+Spring,6,Indiana
+Summer,15,Iowa
+Spring,4,Iowa
+Fall,21,Iowa
+Winter,7,Iowa
+Fall,10,Kansas
+Unknown,3,Kansas
+Summer,14,Kansas
+Winter,4,Kansas
+Spring,10,Kansas
+Winter,17,Kentucky
+Unknown,3,Kentucky
+Spring,12,Kentucky
+Fall,38,Kentucky
+Summer,34,Kentucky
+Fall,9,Louisiana
+Winter,7,Louisiana
+Spring,5,Louisiana
+Unknown,2,Louisiana
+Summer,10,Louisiana
+Summer,5,Maine
+Fall,2,Maine
+Winter,2,Maine
+Spring,1,Maine
+Summer,8,Maryland
+Spring,7,Maryland
+Winter,1,Maryland
+Fall,7,Maryland
+Fall,5,Massachusetts
+Winter,5,Massachusetts
+Summer,7,Massachusetts
+Spring,5,Massachusetts
+Summer,67,Michigan
+Spring,23,Michigan
+Fall,64,Michigan
+Unknown,2,Michigan
+Winter,21,Michigan
+Summer,14,Minnesota
+Fall,14,Minnesota
+Winter,8,Minnesota
+Spring,10,Minnesota
+Unknown,1,Mississippi
+Spring,1,Mississippi
+Fall,8,Mississippi
+Summer,5,Mississippi
+Winter,5,Mississippi
+Spring,28,Missouri
+Unknown,2,Missouri
+Summer,43,Missouri
+Fall,43,Missouri
+Winter,16,Missouri
+Spring,6,Montana
+Fall,11,Montana
+Summer,18,Montana
+Winter,8,Montana
+Summer,4,Nebraska
+Spring,1,Nebraska
+Fall,7,Nebraska
+Winter,1,Nebraska
+Unknown,2,Nebraska
+Summer,4,Nevada
+Fall,2,Nevada
+Winter,1,Nevada
+Fall,2,New Hampshire
+Winter,2,New Hampshire
+Spring,2,New Hampshire
+Summer,3,New Hampshire
+Fall,13,New Jersey
+Spring,10,New Jersey
+Winter,6,New Jersey
+Summer,17,New Jersey
+Summer,11,New Mexico
+Winter,6,New Mexico
+Fall,8,New Mexico
+Spring,6,New Mexico
+Summer,23,New York
+Spring,12,New York
+Fall,18,New York
+Winter,12,New York
+Fall,28,North Carolina
+Summer,24,North Carolina
+Spring,8,North Carolina
+Unknown,2,North Carolina
+Winter,11,North Carolina
+Spring,1,North Dakota
+Winter,2,North Dakota
+Summer,1,North Dakota
+Summer,102,Ohio
+Spring,44,Ohio
+Fall,64,Ohio
+Winter,44,Ohio
+Unknown,6,Ohio
+Fall,29,Oklahoma
+Summer,23,Oklahoma
+Spring,12,Oklahoma
+Winter,14,Oklahoma
+Unknown,1,Oregon
+Spring,15,Oregon
+Fall,53,Oregon
+Summer,101,Oregon
+Winter,23,Oregon
+Spring,8,Pennsylvania
+Winter,17,Pennsylvania
+Fall,25,Pennsylvania
+Unknown,3,Pennsylvania
+Summer,23,Pennsylvania
+Summer,1,Rhode Island
+Spring,1,Rhode Island
+Fall,3,Rhode Island
+Fall,4,South Carolina
+Winter,4,South Carolina
+Summer,14,South Carolina
+Spring,7,South Carolina
+Fall,4,South Dakota
+Spring,2,South Dakota
+Summer,2,South Dakota
+Summer,26,Tennessee
+Spring,18,Tennessee
+Winter,7,Tennessee
+Fall,20,Tennessee
+Unknown,1,Tennessee
+Fall,65,Texas
+Spring,33,Texas
+Winter,38,Texas
+Unknown,8,Texas
+Summer,65,Texas
+Winter,8,Utah
+Fall,17,Utah
+Spring,5,Utah
+Summer,15,Utah
+Fall,3,Vermont
+Summer,2,Vermont
+Spring,1,Vermont
+Winter,1,Vermont
+Winter,9,Virginia
+Summer,25,Virginia
+Spring,16,Virginia
+Fall,19,Virginia
+Spring,106,Washington
+Summer,203,Washington
+Unknown,10,Washington
+Winter,59,Washington
+Fall,147,Washington
+Spring,11,West Virginia
+Summer,37,West Virginia
+Fall,29,West Virginia
+Winter,18,West Virginia
+Spring,10,Wisconsin
+Unknown,2,Wisconsin
+Fall,26,Wisconsin
+Winter,8,Wisconsin
+Summer,28,Wisconsin
+Fall,4,Wyoming
+Summer,7,Wyoming
+Winter,2,Wyoming
+Unknown,1,Wyoming
+Spring,3,Wyoming
