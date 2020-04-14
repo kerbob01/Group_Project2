@@ -39,16 +39,39 @@ d3.csv("sightings by_season.csv", function(data) {
   svg.append("g")
     .call(d3.axisLeft(y));
 
-  // Bars
-  svg.selectAll("mybar")
-    .data(data)
-    .enter()
-    .append("rect")
-      .attr("x", function(d) { return x(d.season); })
-      .attr("y", function(d) { return y(d.count); })
-      .attr("width", x.bandwidth())
-      .attr("height", function(d) { return height - y(d.count); })
-      .attr("fill", "#69b3a2")
+    console.log()
 
-})
+  // Bars
+  // svg.selectAll("mybar")
+  //   .data(data)
+  //   .enter()
+  //   .append("rect")
+  //     .attr("x", function(d) { return x(d.season); })
+  //     .attr("y", function(d) { return y(d.count); })
+  //     .attr("width", x.bandwidth())
+  //     .attr("height", function(d) { return height - y(d.count); })
+  //     .attr("fill", "#69b3a2")
+  
+      svg.selectAll("mybar")
+      .data(data)
+      .enter()
+      .append("rect")
+        .attr("x", function(d) { return x(d.season); })
+        .attr("width", x.bandwidth())
+        .attr("fill", "#69b3a2")
+        // no bar at the beginning thus:
+        .attr("height", function(d) { return height - y(0); }) // always equal to 0
+        .attr("y", function(d) { return y(0); })
+
+  svg.selectAll("rect")
+      .transition()
+      .duration(2000)
+      .attr("y", function(d) { return y(d.count); })
+      .attr("height", function(d) { return height - y(d.count); })
+      .delay(function(d,i){console.log(i) ; return(i*100)})
+    
+    })
+    
+
+
 

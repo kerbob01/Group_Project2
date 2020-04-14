@@ -1,0 +1,217 @@
+count,state,season
+30,Alabama,Summer
+19,Alabama,Fall
+1,Alabama,Unknown
+23,Alabama,Winter
+14,Alabama,Spring
+2,Alaska,Fall
+3,Alaska,Winter
+3,Alaska,Spring
+4,Alaska,Summer
+17,Arizona,Fall
+2,Arizona,Unknown
+35,Arizona,Summer
+7,Arizona,Spring
+13,Arizona,Winter
+13,Arkansas,Spring
+31,Arkansas,Fall
+2,Arkansas,Unknown
+24,Arkansas,Summer
+19,Arkansas,Winter
+82,California,Fall
+34,California,Winter
+4,California,Unknown
+148,California,Summer
+47,California,Spring
+16,Colorado,Spring
+4,Colorado,Unknown
+40,Colorado,Summer
+11,Colorado,Winter
+39,Colorado,Fall
+2,Connecticut,Fall
+2,Connecticut,Winter
+7,Connecticut,Summer
+1,Delaware,Winter
+1,Delaware,Summer
+1,Delaware,Fall
+82,Florida,Summer
+69,Florida,Fall
+64,Florida,Winter
+9,Florida,Unknown
+51,Florida,Spring
+24,Georgia,Winter
+2,Georgia,Unknown
+16,Georgia,Spring
+40,Georgia,Summer
+30,Georgia,Fall
+26,Idaho,Summer
+32,Idaho,Fall
+2,Idaho,Spring
+6,Idaho,Winter
+1,Idaho,Unknown
+2,Illinois,Unknown
+36,Illinois,Spring
+61,Illinois,Summer
+37,Illinois,Winter
+75,Illinois,Fall
+1,Indiana,Unknown
+15,Indiana,Fall
+27,Indiana,Summer
+7,Indiana,Winter
+6,Indiana,Spring
+15,Iowa,Summer
+4,Iowa,Spring
+21,Iowa,Fall
+7,Iowa,Winter
+10,Kansas,Fall
+3,Kansas,Unknown
+14,Kansas,Summer
+4,Kansas,Winter
+10,Kansas,Spring
+17,Kentucky,Winter
+3,Kentucky,Unknown
+12,Kentucky,Spring
+38,Kentucky,Fall
+34,Kentucky,Summer
+9,Louisiana,Fall
+7,Louisiana,Winter
+5,Louisiana,Spring
+2,Louisiana,Unknown
+10,Louisiana,Summer
+5,Maine,Summer
+2,Maine,Fall
+2,Maine,Winter
+1,Maine,Spring
+8,Maryland,Summer
+7,Maryland,Spring
+1,Maryland,Winter
+7,Maryland,Fall
+5,Massachusetts,Fall
+5,Massachusetts,Winter
+7,Massachusetts,Summer
+5,Massachusetts,Spring
+67,Michigan,Summer
+23,Michigan,Spring
+64,Michigan,Fall
+2,Michigan,Unknown
+21,Michigan,Winter
+14,Minnesota,Summer
+14,Minnesota,Fall
+8,Minnesota,Winter
+10,Minnesota,Spring
+1,Mississippi,Unknown
+1,Mississippi,Spring
+8,Mississippi,Fall
+5,Mississippi,Summer
+5,Mississippi,Winter
+28,Missouri,Spring
+2,Missouri,Unknown
+43,Missouri,Summer
+43,Missouri,Fall
+16,Missouri,Winter
+6,Montana,Spring
+11,Montana,Fall
+18,Montana,Summer
+8,Montana,Winter
+4,Nebraska,Summer
+1,Nebraska,Spring
+7,Nebraska,Fall
+1,Nebraska,Winter
+2,Nebraska,Unknown
+4,Nevada,Summer
+2,Nevada,Fall
+1,Nevada,Winter
+2,New Hampshire,Fall
+2,New Hampshire,Winter
+2,New Hampshire,Spring
+3,New Hampshire,Summer
+13,New Jersey,Fall
+10,New Jersey,Spring
+6,New Jersey,Winter
+17,New Jersey,Summer
+11,New Mexico,Summer
+6,New Mexico,Winter
+8,New Mexico,Fall
+6,New Mexico,Spring
+23,New York,Summer
+12,New York,Spring
+18,New York,Fall
+12,New York,Winter
+28,North Carolina,Fall
+24,North Carolina,Summer
+8,North Carolina,Spring
+2,North Carolina,Unknown
+11,North Carolina,Winter
+1,North Dakota,Spring
+2,North Dakota,Winter
+1,North Dakota,Summer
+102,Ohio,Summer
+44,Ohio,Spring
+64,Ohio,Fall
+44,Ohio,Winter
+6,Ohio,Unknown
+29,Oklahoma,Fall
+23,Oklahoma,Summer
+12,Oklahoma,Spring
+14,Oklahoma,Winter
+1,Oregon,Unknown
+15,Oregon,Spring
+53,Oregon,Fall
+101,Oregon,Summer
+23,Oregon,Winter
+8,Pennsylvania,Spring
+17,Pennsylvania,Winter
+25,Pennsylvania,Fall
+3,Pennsylvania,Unknown
+23,Pennsylvania,Summer
+1,Rhode Island,Summer
+1,Rhode Island,Spring
+3,Rhode Island,Fall
+4,South Carolina,Fall
+4,South Carolina,Winter
+14,South Carolina,Summer
+7,South Carolina,Spring
+4,South Dakota,Fall
+2,South Dakota,Spring
+2,South Dakota,Summer
+26,Tennessee,Summer
+18,Tennessee,Spring
+7,Tennessee,Winter
+20,Tennessee,Fall
+1,Tennessee,Unknown
+65,Texas,Fall
+33,Texas,Spring
+38,Texas,Winter
+8,Texas,Unknown
+65,Texas,Summer
+8,Utah,Winter
+17,Utah,Fall
+5,Utah,Spring
+15,Utah,Summer
+3,Vermont,Fall
+2,Vermont,Summer
+1,Vermont,Spring
+1,Vermont,Winter
+9,Virginia,Winter
+25,Virginia,Summer
+16,Virginia,Spring
+19,Virginia,Fall
+106,Washington,Spring
+203,Washington,Summer
+10,Washington,Unknown
+59,Washington,Winter
+147,Washington,Fall
+11,West Virginia,Spring
+37,West Virginia,Summer
+29,West Virginia,Fall
+18,West Virginia,Winter
+10,Wisconsin,Spring
+2,Wisconsin,Unknown
+26,Wisconsin,Fall
+8,Wisconsin,Winter
+28,Wisconsin,Summer
+4,Wyoming,Fall
+7,Wyoming,Summer
+2,Wyoming,Winter
+1,Wyoming,Unknown
+3,Wyoming,Spring
