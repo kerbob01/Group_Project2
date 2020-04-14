@@ -28,7 +28,7 @@ d3.json("us.json", function(us){
 });
 
 //read the data set, and put into variable
-d3.csv("Bigfoot.csv", 
+d3.csv("../data/Bigfoot.csv", 
 	function(data){
 		initialData = data;
 		addSightingsByYear(data);
