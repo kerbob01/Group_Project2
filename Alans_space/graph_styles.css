@@ -2,8 +2,11 @@ html,
 body {
   padding: 0;
   margin: 0;
+  /* background: url("2.jpg") ; */
   background: rgb(198, 199, 196);
+  height: 100%;
 }
+
 
 
 .axis {
