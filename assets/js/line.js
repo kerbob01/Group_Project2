@@ -12,14 +12,15 @@ var svg = d3.select("#my_dataviz")
   .attr("transform",
     "translate(" + margin.left + "," + margin.top + ")")
   ;
-  var myimage = svg.append('image')
+var myimage = svg.append('image')
   .attr('xlink:href', 'https://www.outsideonline.com/sites/default/files/styles/width_1200/public/2016/07/08/bigfoot-rick-jacobs-6.jpg?itok=-R6SVg09')
-     .attr('width', '112%' )
-     .attr('height', '100%')
-  //.attr("width", width + margin.left + margin.right +30)
-  //.attr("height", height + margin.top + margin.bottom -45)
-    
-   myimage.attr('x', -95)   
+  .attr('width', '112%')
+  .attr('height', '100%')
+  .attr('opacity', '90%')
+//.attr("width", width + margin.left + margin.right +30)
+//.attr("height", height + margin.top + margin.bottom -45)
+
+myimage.attr('x', -95)
 
 
 
@@ -41,7 +42,9 @@ d3.csv("../data/sightings_by_year.csv",
     svg.append("g")
       .attr("transform", "translate(0," + height + ")")
       .call(d3.axisBottom(x))
-      .style('fill', 'white');
+      //.style('fill', 'white')
+      .selectAll("text")
+      .style("fill", "white");
 
 
     // Add Y axis
@@ -58,27 +61,27 @@ d3.csv("../data/sightings_by_year.csv",
       .call(d3.axisLeft(y))
       ;
 
-// gridlines in x axis function
-function make_x_gridlines() {		
-  return d3.axisBottom(x)
-      .ticks(10)
-}
+    // gridlines in x axis function
+    function make_x_gridlines() {
+      return d3.axisBottom(x)
+        .ticks(10)
+    }
 
-// gridlines in y axis function
-function make_y_gridlines() {		
-  return d3.axisLeft(y)
-      .ticks(10)
-      
-}
+    // gridlines in y axis function
+    function make_y_gridlines() {
+      return d3.axisLeft(y)
+        .ticks(10)
+
+    }
 
 
-//mycolor = d3.rgb(128,128,128);//grey
-// mycolor = d3.hsl('grey');  //  Hue-Saturation-Lightness  (e.g. red)
-//d3.select("#my_dataviz").style("background-color", mycolor) 
+    //mycolor = d3.rgb(128,128,128);//grey
+    // mycolor = d3.hsl('grey');  //  Hue-Saturation-Lightness  (e.g. red)
+    //d3.select("#my_dataviz").style("background-color", mycolor) 
 
-//svg.style("background","url('https://www.outsideonline.com/sites/default/files/styles/width_1200/public/2016/07/08/bigfoot-rick-jacobs-6.jpg?itok=-R6SVg09') no-repeat");
+    //svg.style("background","url('https://www.outsideonline.com/sites/default/files/styles/width_1200/public/2016/07/08/bigfoot-rick-jacobs-6.jpg?itok=-R6SVg09') no-repeat");
 
- 
+
 
     // Add the line
     svg.append("path")
@@ -145,7 +148,7 @@ function make_y_gridlines() {
       .style("text-anchor", "middle")
       .text("Year of Sighting")
       .style('fill', 'white')
-      
+
       ;
     //add y lable
     svg.append("text")
@@ -157,28 +160,30 @@ function make_y_gridlines() {
       .text("Counts Per Year")
       ;
     //-------------------------------------------------------------------------------------------------------------
- // add the X gridlines
- svg.append("g")			
- .attr("class", "grid")
- .attr("transform", "translate(0," + height + ")")
- .call(make_x_gridlines()
-     .tickSize(-height)
-     .tickFormat("")
- )
+    // add the X gridlines
+    svg.append("g")
+      .attr("class", "grid")
+      .attr("transform", "translate(0," + height + ")")
+      .call(make_x_gridlines()
+        .tickSize(-height)
+        .tickFormat("")
+      )
+      .selectAll("grid")
+      .style("fill", "white");
 
-// add the Y gridlines
-svg.append("g")			
- .attr("class", "grid")
- 
- .call(make_y_gridlines()
-     .tickSize(-width)
-     .tickFormat("")
-     //.style("stroke", "white")
-     //.attr("stroke-width", 2)
- )
+    // add the Y gridlines
+    svg.append("g")
+      .attr("class", "grid")
+
+      .call(make_y_gridlines()
+        .tickSize(-width)
+        .tickFormat("")
+        //.style("stroke", "white")
+        //.attr("stroke-width", 2)
+      )
 
 
 
 
- 
+
   })

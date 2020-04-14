@@ -13,9 +13,9 @@ var svg = d3.select("#my_dataviz")
     "translate(" + margin.left + "," + margin.top + ")");
 
 // Parse the Data
-d3.csv("counts_by_season_state_piviot.csv", function (data) {
+d3.csv("../data/counts_by_season_state_piviot.csv", function (data) {
 
-  var keys = ["Fall", "Spring", "Summer", "Unknown", "Winter"]
+  var keys = ["Spring", "Summer", "Fall", "Winter", "Unknown"]
 
   // List of subgroups = header of the csv files = soil condition here
   var subgroups = data.columns.slice(1)
