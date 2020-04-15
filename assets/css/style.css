@@ -144,8 +144,8 @@ input {
 }
 /* changes circles on map when activated */
 .sightings:hover{
-	fill: rgb(5, 5, 5);
-	stroke: rgb(245, 123, 8);
+	fill: rgb(255, 251, 3);
+	stroke: rgb(250, 5, 5);
 	stroke-width: 5;
 }
 /* map hoover tips */
