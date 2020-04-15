@@ -238,3 +238,28 @@ body {
 .block:after {
 	filter: blur(50px);
 }
+p.codrops-demos a,
+p.codrops-demos a.current-demo,
+p.codrops-demos a.current-demo:hover{
+    display: inline-block;
+    border: 1px solid #6D0019;
+    padding: 4px 10px 3px;
+    font-size: 13px;
+    line-height: 18px;
+    margin: 2px 3px;
+    font-weight: 800;
+    -webkit-box-shadow: 0px 1px 1px rgba(0,0,0,0.1);
+    -moz-box-shadow:0px 1px 1px rgba(0,0,0,0.1);
+    box-shadow: 0px 1px 1px rgba(0,0,0,0.1);
+    color:#fff;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    background: #A90329;
+    background: -moz-linear-gradient(top, #A90329 0%, #8F0222 44%, #6D0019 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#A90329), color-stop(44%,#8F0222), color-stop(100%,#6D0019));
+    background: -webkit-linear-gradient(top, #A90329 0%,#8F0222 44%,#6D0019 100%);
+    background: -o-linear-gradient(top, #A90329 0%,#8F0222 44%,#6D0019 100%);
+    background: -ms-linear-gradient(top, #A90329 0%,#8F0222 44%,#6D0019 100%);
+    background: linear-gradient(top, #A90329 0%,#8F0222 44%,#6D0019 100%);
+}
