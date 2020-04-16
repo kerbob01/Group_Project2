@@ -142,7 +142,7 @@ function updatePieChart(domElementToAppendTo, scheme, sightings){
 	d3.selectAll(".arc").remove();
 	d3.select(domElementToAppendTo).select("svg").remove();
 	
-	//get seasons and counts
+	//get classification and counts
 	var countByClassification = d3.nest()
 		.key(
 			function(d){
