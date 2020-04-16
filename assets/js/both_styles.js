@@ -15,7 +15,7 @@ var svg = d3.select("#my_dataviz")
           "translate(" + margin.left + "," + margin.top + ")");
 
 //Read the data
-d3.csv("sightings_by_year.csv",
+d3.csv("../data/sightings_by_year.csv",
 
   // When reading the csv, I must format variables:
   function(d){
