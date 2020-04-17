@@ -32,17 +32,18 @@ d3.csv("../data/sightings_by_year.csv",
     return { year: d3.timeParse("%Y")(d.year), count: +d.count }
   },
 
- 
+  
+
 
   // Now I can use this dataset:
   function (data) {
 
-    //var yyyy = year.getFullYear();
-    
+  
 
     // Add X axis --> it is a date format
     var x = d3.scaleTime()
       .domain(d3.extent(data, function (d) { return d.year; }))
+      
       .range([0, width]);
     svg.append("g")
       .attr("transform", "translate(0," + height + ")")
@@ -118,7 +119,7 @@ d3.csv("../data/sightings_by_year.csv",
     }
     var mousemove = function (d) {
       Tooltip
-        .html("Number of Sightings: " + d.count)
+        //.html("Number of Sightings: " + d.count)
         .html("Year of Sighting: " + d.year + "<br> Number of Sightings: " + d.count)
         .style("left", (d3.mouse(this)[0] + 40) + "px")
         .style("top", (d3.mouse(this)[1]) + "px")
