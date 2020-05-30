@@ -1,3 +1,3 @@
 ![Bigfoot](assets/images/2.jpg)
 # Group_Project2
-This Project was to show visualizations realeted to the amount of big foot sightitngs accross the united states
+This Project was to show visualizations related to the amount of big foot sightings across the united states. For this project we used PostgreSQL to clean data that was pulled originally from https://www.bfro.net/GDB/classify.asp#classification.the web site was built using Boot strap CSS, the graphs were built using  D3.js.
